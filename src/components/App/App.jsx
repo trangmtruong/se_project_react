@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import { getWeather } from "../../utils/weatherApi";
+import { coordinates, APIkey } from "../../utils/constants";
 
 function App() {
   const [weatherData, setWeatherData] = useState({ type: "cold" });
@@ -20,6 +23,15 @@ function App() {
   const closeActiveModal = () => {
     setActiveModal("");
   };
+
+  useEffect(() => {
+    getWeather(coordinates, APIkey)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <div className="page">
       <div className="page__content">
