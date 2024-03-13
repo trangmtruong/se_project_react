@@ -1,3 +1,10 @@
+export const weatherOptions = [
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../assets/day/day-clear.png", import.meta.url),
+  },
+];
 export const defaultClothingItems = [
   {
     _id: 0,
