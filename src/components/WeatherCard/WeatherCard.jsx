@@ -7,7 +7,8 @@ function WeatherCard({ weatherData }) {
       option.condition === weatherData.condition
     );
   });
-  weatherOption = filteredOptions[0];
+
+  const weatherOption = filteredOptions[0];
   // const weatherOptionUrl = filteredOptions[0]?.url;
   // const weatherOptionCondition = filteredOptions[0]?.condition;
   // const weatherOptionDay = filteredOptions[0]?.day;
@@ -16,7 +17,7 @@ function WeatherCard({ weatherData }) {
       <p className="weather-card__temp">{weatherData.temp.F} &deg; F</p>
       <img
         src={weatherOption?.url}
-        alt={`Card showing ${weatherOption?.day ? "day" : "night"} ${
+        alt={`Card showing ${weatherOption?.day ? "day" : "night"}time ${
           weatherOption?.condition
         } weather`}
         className="weather-card__image"
