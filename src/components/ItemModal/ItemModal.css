@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("../../assets/fonts/CabinetGrotesk-Medium.otf") format("otf");
+}
+.modal__content {
+  padding: 0;
+  height: 610px;
+  width: 498px;
+  border-radius: 16px;
+}
+.modal__close {
+  background-image: url();
+  width: 20px;
+  height: 20px;
+}
+.modal__image {
+  width: 100%;
+  border-radius: 16px;
+}
+.modal__footer {
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+.modal__caption {
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 20px;
+}
+.modal__weather {
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 20px;
+}
