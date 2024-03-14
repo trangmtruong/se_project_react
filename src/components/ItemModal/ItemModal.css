@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Cabinet Grotesk";
-  src: url("../../assets/fonts/CabinetGrotesk-Medium.otf") format("otf");
+  src: url("../../assets/fonts/CabinetGrotesk-Medium.otf") format("opentype");
 }
 .modal__content {
   padding: 0;
@@ -17,6 +17,7 @@
   border: none;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: transparent;
 }
 .modal__image {
   width: 100%;
