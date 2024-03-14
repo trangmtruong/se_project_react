@@ -7,11 +7,16 @@
   height: 610px;
   width: 498px;
   border-radius: 16px;
+  border: none;
 }
 .modal__close {
-  background-image: url();
+  background-image: url(../../assets/closebtn-preview.svg);
+  cursor: pointer;
   width: 20px;
   height: 20px;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .modal__image {
   width: 100%;

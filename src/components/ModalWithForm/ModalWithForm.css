@@ -28,6 +28,13 @@
   position: absolute;
   right: 28px;
   top: 20px;
+  background-image: url(../../assets/closebtn-add.svg);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .modal__form {
   display: flex;
@@ -44,4 +51,12 @@
 }
 .modal__submit {
   border: none;
+  background-image: url(../../assets/addgarmentbtn-disabled.svg);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
 }

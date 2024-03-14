@@ -36,6 +36,7 @@
   width: 116px;
   height: 24px;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .header__user-container {
