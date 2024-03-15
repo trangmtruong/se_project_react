@@ -20,24 +20,31 @@
 .modal__content {
   background-color: #fff;
   position: relative;
-  padding: 28px 28px 36px;
+
   max-width: 496px;
   box-sizing: border-box;
-  height: 435px;
+
   width: 496px;
   font-family: "Cabinet Grotesk";
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
 }
+.modal__content_type_addgarment {
+  padding: 28px 28px 36px 28px;
+  max-height: 436px;
+}
 .modal__title {
   margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
 }
 .modal__close {
   position: absolute;
   right: 28px;
   top: 20px;
-  background-image: url("../../assets/closebtn-add.svg");
+
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -46,19 +53,40 @@
   background-size: cover;
   background-color: transparent;
 }
+.modal__close_type_grey {
+  background-image: url(../../assets/closebtn-addgarment.svg);
+}
 .modal__form {
   display: flex;
   flex-direction: column;
 }
+.modal__name {
+  margin-top: 24px;
+}
+.modal__image {
+  margin-top: 24px;
+}
 .modal__input {
   display: block;
-  border: 1px solid #000000;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-top: 8px;
+  width: 440px;
 }
 .modal__radio-buttons {
   display: flex;
   flex-direction: column;
   border: none;
   padding: 0;
+  gap: 8px;
+  margin-bottom: 32px;
+  margin-top: 24px;
+}
+.modal__label_type_radio {
+  accent-color: black;
+}
+.modal__legend {
+  margin-bottom: 17px;
 }
 .modal__submit {
   border: none;

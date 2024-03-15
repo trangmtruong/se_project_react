@@ -3,14 +3,17 @@
   src: url("../../assets/fonts/CabinetGrotesk-Medium.otf") format("opentype");
 }
 .modal__content {
-  padding: 0;
-  height: 610px;
   width: 498px;
   border-radius: 16px;
   border: none;
 }
+.modal__content_type_image {
+  padding: 0;
+}
 .modal__close {
-  background-image: url(../../assets/closebtn-preview.svg);
+  position: absolute;
+  right: 28px;
+  top: 20px;
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -18,6 +21,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
+}
+.modal__close_type_white {
+  background-image: url(../../assets/closebtn-preview.svg);
 }
 .modal__image {
   width: 100%;
@@ -28,19 +34,21 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-  margin: 0;
+  margin-left: 32px;
+  margin-bottom: 32px;
+  margin-top: 20px;
 }
 .modal__caption {
   font-family: "Cabinet Grotesk";
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-  margin: 20px;
+  margin: 0;
 }
 .modal__weather {
   font-family: "Cabinet Grotesk";
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
-  margin: 20px;
+  margin: 12px 0 0 0;
 }

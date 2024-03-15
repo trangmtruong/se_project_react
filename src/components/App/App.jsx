@@ -51,7 +51,7 @@ function App() {
         activeModal={activeModal}
         onClose={closeActiveModal}
       >
-        <label htmlFor="name" className="modal__label">
+        <label htmlFor="name" className="modal__name">
           Name{" "}
           <input
             type="text"
