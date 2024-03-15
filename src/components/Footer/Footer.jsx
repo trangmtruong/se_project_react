@@ -1,10 +1,10 @@
 import "./Footer.css";
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <p className="footer__copyright-name">Developed by Trang Truong</p>
       <p className="footer__copyright-year">2024</p>
-    </div>
+    </footer>
   );
 }
 export default Footer;
