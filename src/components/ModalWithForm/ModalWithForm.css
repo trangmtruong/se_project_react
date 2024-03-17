@@ -29,6 +29,8 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+  padding: 28px 28px 36px 28px;
+  /* max-height: 436px; */
 }
 .modal__content_type_addgarment {
   padding: 28px 28px 36px 28px;
@@ -99,4 +101,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+  color: #fff;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
 }
