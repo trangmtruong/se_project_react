@@ -51,6 +51,7 @@ function App() {
         activeModal={activeModal}
         onClose={closeActiveModal}
         isOpen={activeModal === "add-garment"}
+        name={"addgarment"}
       >
         <label htmlFor="name" className="modal__input_type_name">
           Name{" "}
@@ -106,6 +107,9 @@ function App() {
             Cold
           </label>
         </fieldset>
+        <button type="submit" className="modal__submit">
+          Add garment
+        </button>
       </ModalWithForm>
       <ItemModal
         activeModal={activeModal}
