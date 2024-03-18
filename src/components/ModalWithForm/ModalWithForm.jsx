@@ -18,7 +18,9 @@ function ModalWithForm({
           className="modal__close modal__close_type_grey"
           type="button"
         />
-        <form className="modal__form">{children}</form>
+        <form className="modal__form" name={name}>
+          {children}
+        </form>
       </div>
     </div>
   );

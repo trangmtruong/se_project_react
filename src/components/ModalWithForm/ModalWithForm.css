@@ -92,7 +92,8 @@
 }
 .modal__submit {
   border: none;
-  background-image: url(../../assets/addgarmentbtn-disabled.svg);
+  background: #0000004d;
+  border-radius: 4px;
   cursor: pointer;
   width: 124px;
   height: 36px;
