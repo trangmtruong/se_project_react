@@ -19,6 +19,7 @@
   height: 28px;
   /* outline: none; */
   appearance: none;
+  cursor: pointer;
 }
 
 .switch__slider {
@@ -32,21 +33,27 @@
   position: absolute;
 }
 .switch__slider-F {
-  top: 9px;
-  left: 26px;
+  top: 0px;
+  left: 27px;
 }
 .switch__slider-C {
-  top: 9px;
-  left: 2px;
+  top: 0px;
+  left: 1px;
 }
 .switch__active {
   color: #fff;
 }
 .switch__temp-F {
+  position: absolute;
+  top: -6px;
+  left: 39px;
+  color: #f3f3f3;
+  cursor: pointer;
 }
 .switch__temp-C {
   position: absolute;
-  top: 2px;
+  top: -7px;
   left: 11px;
   color: #f3f3f3;
+  cursor: pointer;
 }

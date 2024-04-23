@@ -50,7 +50,7 @@ function App() {
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
-        value={(currentTemperatureUnit, handleToggleSwitchChange)}
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="page__content">
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
