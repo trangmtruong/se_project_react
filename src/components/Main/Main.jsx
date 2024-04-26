@@ -7,7 +7,7 @@ import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUni
 function Main({ weatherData, hanldeCardClick }) {
   //adding context currentTemperatureUnit using useContext
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  console.log(currentTemperatureUnit);
+
   //declares
   // const temp = weatherData?.temperature?.[currentTemperatureUnit] || 999;
   return (
@@ -15,7 +15,11 @@ function Main({ weatherData, hanldeCardClick }) {
       <WeatherCard weatherData={weatherData} />
       <section className="cards">
         <p className="cards__text">
-          Today is {weatherData.temp.F} &deg; F / You may want to wear:
+          Today is{" "}
+          {currentTemperatureUnit === "F"
+            ? `${weatherData.temp.F} ° F`
+            : `${weatherData.temp.C} ° C`}{" "}
+          / You may want to wear:
         </p>
         <ul className="cards__list">
           {defaultClothingItems
