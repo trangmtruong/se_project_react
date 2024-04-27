@@ -33,8 +33,9 @@ function App() {
   const closeActiveModal = () => {
     setActiveModal("");
   };
-  const onAddItem = (e) => {
-    console.log(e);
+  const onAddItem = (values) => {
+    console.log(values);
+    // console.log(e.target);
   };
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -62,7 +63,7 @@ function App() {
           <Footer />
         </div>
         <AddItemModal
-          onClose={closeActiveModal}
+          closeActiveModal={closeActiveModal}
           activeModal={activeModal}
           onAddItem={onAddItem}
         />
