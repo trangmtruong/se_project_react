@@ -5,10 +5,12 @@ function ModalWithForm({
   buttonText,
   titleText,
   activeModal,
-  onClose,
+
   isOpen,
   name,
   onSubmit,
+  onClose,
+  closeActiveModal,
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>

@@ -1,7 +1,13 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = (closeActiveModal, activeModal, isOpen, onAddItem) => {
+const AddItemModal = ({
+  activeModal,
+
+  onAddItem,
+
+  closeActiveModal,
+}) => {
   return (
     <ModalWithForm
       titleText="New garment"

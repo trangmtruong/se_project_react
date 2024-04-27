@@ -62,8 +62,8 @@ function App() {
           <Footer />
         </div>
         <AddItemModal
-          closeActiveModal={closeActiveModal}
-          activeModal={handleAddClick}
+          onClose={closeActiveModal}
+          activeModal={activeModal}
           onAddItem={onAddItem}
         />
 
