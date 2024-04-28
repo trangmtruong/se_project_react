@@ -1,0 +1,4 @@
+.clothes-section__labels {
+  display: flex;
+  flex-direction: row;
+}
