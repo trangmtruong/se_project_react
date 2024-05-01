@@ -11,7 +11,7 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { getItems } from "../../utils/api";
+import { getItems, createCard, deleteCard } from "../../utils/api";
 
 function App() {
   //useState hooks
@@ -39,7 +39,13 @@ function App() {
   const onAddItem = (values) => {
     console.log(values);
     // console.log(e.target);
+    // createCard()
+    // .then((data) => {setClothingItems([newItem, ...clothingItems])})
+    // .catch(console.error)
   };
+
+  // const onDeleteItem function
+
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
