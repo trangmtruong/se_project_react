@@ -46,13 +46,14 @@ function App() {
       .catch(console.error);
   };
 
-  // const onDeleteItem (cardId) => {
-  //   deleteCard(cardId)
-  //   .then(() => {
-
-  //   })
-  //   .catch(console.error);
-  // }
+  const onDeleteItem = (cardId) => {
+    deleteCard(cardId)
+      .then(() => {
+        (setClothingItems) => (prevItems) =>
+          prevItems.filter((item) => item.id !== cardId);
+      })
+      .catch(console.error);
+  };
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -119,6 +120,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          onDeleteItem={onDeleteItem}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
