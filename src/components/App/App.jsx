@@ -37,14 +37,22 @@ function App() {
     setActiveModal("");
   };
   const onAddItem = (values) => {
-    console.log(values);
-    // console.log(e.target);
-    // createCard()
-    // .then((data) => {setClothingItems([newItem, ...clothingItems])})
-    // .catch(console.error)
+    // console.log(values);
+    // // console.log(e.target);
+    createCard(values)
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+      })
+      .catch(console.error);
   };
 
-  // const onDeleteItem function
+  // const onDeleteItem (cardId) => {
+  //   deleteCard(cardId)
+  //   .then(() => {
+
+  //   })
+  //   .catch(console.error);
+  // }
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
