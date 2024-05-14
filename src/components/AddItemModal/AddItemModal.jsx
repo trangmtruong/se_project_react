@@ -16,7 +16,6 @@ const AddItemModal = ({
 
   const [imageUrl, setImageUrl] = useState("");
   const handleImageUrlChange = (e) => {
-    console.log(e.target.value);
     setImageUrl(e.target.value);
   };
   const [weather, setWeather] = useState("");
@@ -27,6 +26,7 @@ const AddItemModal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     onAddItem({ name, imageUrl, weather });
   };
 

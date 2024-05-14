@@ -66,3 +66,7 @@
   width: 40px;
   height: 40px;
 }
+a {
+  text-decoration: none;
+  color: #000;
+}

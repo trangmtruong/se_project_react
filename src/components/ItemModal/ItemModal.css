@@ -37,6 +37,8 @@
   margin-left: 32px;
   margin-bottom: 32px;
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .modal__caption {
   font-family: "Cabinet Grotesk";
@@ -51,4 +53,11 @@
   line-height: 24px;
   font-weight: 700;
   margin: 12px 0 0 0;
+}
+.modal__delete {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  color: #ff4d00;
+  padding-right: 32px;
 }

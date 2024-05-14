@@ -1,4 +1,17 @@
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("../../assets/fonts/CabinetGrotesk-Medium.otf") format("opentype");
+}
 .sidebar {
   display: flex;
   flex-direction: row;
+  gap: 16px;
+  height: 56px;
+  width: 229px;
+}
+.sidebar__username {
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  line-height: 24.8px;
+  font-weight: 700;
 }

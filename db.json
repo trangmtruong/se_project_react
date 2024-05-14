@@ -103,10 +103,28 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "name": "",
-      "imageUrl": "",
-      "weather": "",
+      "name": "Crop Top",
+      "imageUrl": "https://www.google.com/aclk?sa=l&ai=DChcSEwi2hI-zloyGAxWEZkcBHTl9D3oYABAbGgJxdQ&ase=2&gclid=CjwKCAjw9IayBhBJEiwAVuc3fmq8tAzY0WLhvw2JwhLJdVTXNLKiBL7ut-XFP_97tNu6YihykRi_xRoCEK0QAvD_BwE&sig=AOD64_1U0qwiYFjGZ6fxHfTH_QhfMn5J2w&ctype=5&nis=5&adurl&ved=2ahUKEwjB1YGzloyGAxW8K2IAHTztDk8Qvhd6BQgBEMgB",
+      "weather": "cold",
       "_id": 17
+    },
+    {
+      "name": "djjd",
+      "imageUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIALYAwgMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAAAQQCAwUGBwj/xABGEAABAwIDAwcIBwYEBwAAAAABAAIDBBEFEjEGIUEHEyJRYXGxFDJSYoGRocEjM0JTcsLwFSU0Y5Lhc4Ky0SRDVGSDoqP/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQMCBP/EAB8RAQACAgMBAQEBAAAAAAAAAAABAhEhAxIxQVEyE//aAAwDAQACEQMRAD8A9pREQEREBERAClQFKAiLTVVEVNC6aaRrI2NzOc4+aBqSg2ZhfeQOxZe/2BeAbdbaT7TYm2mo5XtwqInIBu55w1e7stoOred5sOseV1rX/Q1U8TfUkLfBaxxZcTaH1MbAXvuUBwzHjY7weC+X5a2tMWV9XUOPbK4/NTsPjuIYFj89ZRyONmtEkRd0ZR1O+R1CTxYItl9QIuNwHGaTHsOjraJ5yuFnxnzo3cWuHAj466EFcksp07FKhSgKVClAREQEREBERBgiIgIiICIiAhIaRm3LitosfoNnqB1ZiUwijG4DVzzwAHX+tF49tFt5je0AfHSF2HUJ3hkTvpH/AInjTuFrdZXVaTZJth6XtPt7g+z5fE+Y1NW0fw1P0ng+twb7d/YV5HtVtpjG0T2wzPbTUUry000P2txtmdqdOwLiI4GR9JoGa979qpYscrqd1iQyRt+6+9bdIhnNpllGLPYT5g1KynkigsJ3htzYdq3SxthLnSlrG8OcdlHxVWsbFPDz0MjZCy/SjeRld2kLufNJCrPUw",
+      "weather": "cold",
+      "_id": 18
+    },
+    {
+      "name": "ksjjs",
+      "imageUrl": "https://www.google.com/aclk?sa=l&ai=DChcSEwi2hI-zloyGAxWEZkcBHTl9D3oYABBDGgJxdQ&ase=2&gclid=CjwKCAjw9IayBhBJEiwAVuc3fgkltqxGqNTlSaeEiWrsShpYghsPpNLLz-nTFHEsh9PceD5qT9ni-xoClX4QAvD_BwE&sig=AOD64_1rclE8lf7Xul-2BxDk_0pbRuScHw&ctype=5&nis=5&adurl&ved=2ahUKEwjB1YGzloyGAxW8K2IAHTztDk8Quxd6BQgBEJkD",
+      "weather": "cold",
+      "_id": 19
+    },
+    {
+      "name": "njj",
+      "imageUrl": "https://www.google.com/aclk?sa=l&ai=DChcSEwi2hI-zloyGAxWEZkcBHTl9D3oYABBDGgJxdQ&ase=2&gclid=CjwKCAjw9IayBhBJEiwAVuc3fgkltqxGqNTlSaeEiWrsShpYghsPpNLLz-nTFHEsh9PceD5qT9ni-xoClX4QAvD_BwE&sig=AOD64_1rclE8lf7Xul-2BxDk_0pbRuScHw&ctype=5&nis=5&adurl&ved=2ahUKEwjB1YGzloyGAxW8K2IAHTztDk8Quxd6BQgBEJkD",
+      "weather": "warm",
+      "_id": 20
     }
   ]
 }

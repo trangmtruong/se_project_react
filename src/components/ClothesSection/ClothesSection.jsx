@@ -3,15 +3,15 @@ import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 
-const ClothesSection = ({ onCardClick }) => {
+const ClothesSection = ({ onCardClick, clothingItems }) => {
   return (
     <div className="clothes-section">
       <div className="clothes-section__labels">
-        <p>Your Items</p>
-        <button>Add new</button>
+        <p className="clothes-section__items">Your items</p>
+        <button className="clothes-section__add">+ Add new</button>
       </div>
       <ul className="clothes-section__items">
-        {defaultClothingItems.map((item) => {
+        {clothingItems.map((item) => {
           return (
             <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
           );

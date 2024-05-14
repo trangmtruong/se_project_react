@@ -42,6 +42,7 @@ function App() {
     createCard(values)
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -49,8 +50,11 @@ function App() {
   const onDeleteItem = (cardId) => {
     deleteCard(cardId)
       .then(() => {
-        (setClothingItems) => (prevItems) =>
-          prevItems.filter((item) => item.id !== cardId);
+        const updatedClothingItems = clothingItems.filter((item) => {
+          return item._id !== cardId;
+        });
+        setClothingItems(updatedClothingItems);
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -73,7 +77,7 @@ function App() {
     getItems()
       .then((data) => {
         console.log(data);
-        setClothingItems(data);
+        setClothingItems(data.reverse());
       })
       .catch(console.error);
   }, []);
