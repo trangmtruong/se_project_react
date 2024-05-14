@@ -1,7 +1,7 @@
 import "./WeatherCard.css";
 import { useContext } from "react";
 import { weatherOptions, defaultWeatherOptions } from "../../utils/constants";
-import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../../CurrentTemperatureUnitContext";
 import React from "react";
 function WeatherCard({ weatherData }) {
   const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
