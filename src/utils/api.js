@@ -37,4 +37,4 @@ function deleteCard(cardId) {
   });
 }
 
-export { getItems, createCard, deleteCard, request, checkResponse };
+export { getItems, createCard, deleteCard, request, checkResponse, baseUrl };

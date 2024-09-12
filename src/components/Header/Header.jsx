@@ -4,7 +4,12 @@ import avatar from "../../assets/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 
-function Header({ handleAddClick, weatherData }) {
+function Header({
+  handleAddClick,
+  weatherData,
+  handleLoginModal,
+  handleRegisterModal,
+}) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -38,6 +43,20 @@ function Header({ handleAddClick, weatherData }) {
             />
           </div>
         </Link>
+        <button
+          onClick={handleRegisterModal}
+          type="button"
+          className="header_signup-button"
+        >
+          Sign up
+        </button>
+        <button
+          onClick={handleLoginModal}
+          type="button"
+          className="header_login-button"
+        >
+          Log In
+        </button>
       </div>
     </header>
   );

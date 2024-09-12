@@ -12,6 +12,9 @@ import { coordinates, APIkey } from "../../utils/constants";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { getItems, createCard, deleteCard } from "../../utils/api";
+import { signUp, signIn, checkToken } from "../../utils/auth";
+import RegisterModal from "../RegisterModal/RegisterModal";
+import LoginModal from "../LoginModal/LoginModal";
 
 function App() {
   //useState hooks
@@ -24,18 +27,32 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  //currentUser useState
 
   //functions
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
   };
+
   const handleAddClick = () => {
     setActiveModal("add-garment");
-  }; //declare handleAddClick function and call setActiveModal inside the function
+  };
+
+  //declare handleAddClick function and call setActiveModal inside the function
   const closeActiveModal = () => {
     setActiveModal("");
   };
+
+  const handleRegisterModal = () => {
+    setActiveModal("signup");
+  };
+  const handleLoginModal = () => {
+    setActiveModal("login");
+  };
+
   const onAddItem = (values) => {
     // console.log(values);
     // // console.log(e.target);
@@ -54,6 +71,26 @@ function App() {
           return item._id !== cardId;
         });
         setClothingItems(updatedClothingItems);
+        closeActiveModal();
+      })
+      .catch(console.error);
+  };
+
+  const onSignUp = (data) => {
+    signUp(data)
+      .then((res) => {
+        onLogIn(data);
+      })
+      .catch(console.error);
+  };
+
+  const onLogIn = (data) => {
+    signIn(data)
+      .then((res) => {
+        setIsLoggedIn(true);
+        //log user in
+        //adds token
+        localStorage.setItem("jwt", res.token);
         closeActiveModal();
       })
       .catch(console.error);
@@ -82,13 +119,31 @@ function App() {
       .catch(console.error);
   }, []);
 
+  //check token
+  useEffect(() => {
+    checkToken()
+      .then((token) => {
+        console.log(token);
+        setIsLoggedIn(true);
+      })
+      .catch(() => {
+        console.error;
+        setIsLoggedIn(false);
+      });
+  }, []);
+
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="page__content">
-          <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+          <Header
+            handleLoginModal={handleLoginModal}
+            handleRegisterModal={handleRegisterModal}
+            handleAddClick={handleAddClick}
+            weatherData={weatherData}
+          />
           <Routes>
             <Route
               path="/"
@@ -126,6 +181,17 @@ function App() {
           card={selectedCard}
           onClose={closeActiveModal}
           onDeleteItem={onDeleteItem}
+        />
+        <RegisterModal
+          activeModal={activeModal}
+          closeActiveModal={closeActiveModal}
+          onSignUp={onSignUp}
+        />
+
+        <LoginModal
+          activeModal={activeModal}
+          closeActiveModal={closeActiveModal}
+          onLogIn={onLogIn}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
