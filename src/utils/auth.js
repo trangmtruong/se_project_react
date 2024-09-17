@@ -1,7 +1,7 @@
 import { baseUrl, checkResponse, request } from "./api";
 
 //sign up
-function signUp({ name, avatar, email, password }) {
+function signUp({ name, avatarUrl: avatar, email, password }) {
   return request(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
@@ -31,7 +31,7 @@ function signIn({ email, password }) {
   });
 }
 
-function checkToken(token) {
+function getCurrentUser(token) {
   return request(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
@@ -41,4 +41,4 @@ function checkToken(token) {
   });
 }
 
-export { signUp, signIn, checkToken };
+export { signUp, signIn, getCurrentUser };

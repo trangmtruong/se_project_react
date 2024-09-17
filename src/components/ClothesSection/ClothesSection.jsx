@@ -2,8 +2,20 @@ import React from "react";
 import { defaultClothingItems } from "../../utils/constants";
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-const ClothesSection = ({ handleAddClick, onCardClick, clothingItems }) => {
+const ClothesSection = ({
+  handleAddClick,
+  onCardClick,
+  clothingItems,
+  selectedCard = { selectedCard },
+}) => {
+  const currentUser = useContext(CurrentUserContext);
+  const isOwn = selectedCard.owner === currentUser._id;
+  const clothesSectionItemsClassname = `clothes-section__items ${
+    isOwn ? "clothes-section__items_visible" : "clothes-section__items_hidden"
+  }`;
   return (
     <div className="clothes-section">
       <div className="clothes-section__labels">
@@ -16,7 +28,7 @@ const ClothesSection = ({ handleAddClick, onCardClick, clothingItems }) => {
           + Add new
         </button>
       </div>
-      <ul className="clothes-section__items">
+      <ul className={clothesSectionItemsClassname}>
         {clothingItems.map((item) => {
           return (
             <ItemCard key={item._id} item={item} onCardClick={onCardClick} />

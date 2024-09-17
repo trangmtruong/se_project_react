@@ -17,11 +17,12 @@ function getItems() {
   return request(`${baseUrl}/items`);
 }
 
-function createCard({ name, imageUrl, weather }) {
+function createCard({ name, imageUrl, weather, token }) {
   return request(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json", // Add Content-Type header
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       name,
@@ -31,9 +32,10 @@ function createCard({ name, imageUrl, weather }) {
   });
 }
 
-function deleteCard(cardId) {
+function deleteCard(cardId, token) {
   return request(`${baseUrl}/items/${cardId}`, {
     method: "DELETE",
+    authorization: `Bearer ${token}`,
   });
 }
 
