@@ -16,6 +16,7 @@ const ClothesSection = ({
   const clothesSectionItemsClassname = `clothes-section__items ${
     isOwn ? "clothes-section__items_visible" : "clothes-section__items_hidden"
   }`;
+
   return (
     <div className="clothes-section">
       <div className="clothes-section__labels">
@@ -29,11 +30,15 @@ const ClothesSection = ({
         </button>
       </div>
       <ul className={clothesSectionItemsClassname}>
-        {clothingItems.map((item) => {
-          return (
-            <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
-          );
-        })}
+        {clothingItems
+          .filter((item) => {
+            return item.owner === currentUser._id;
+          })
+          .map((item) => {
+            return (
+              <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+            );
+          })}
       </ul>
     </div>
   );

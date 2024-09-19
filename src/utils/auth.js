@@ -31,6 +31,22 @@ function signIn({ email, password }) {
   });
 }
 
+//edit profile
+
+function editProfile({ name, avatarUrl: avatar }, token) {
+  return request(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      name,
+      avatar,
+    }),
+  });
+}
+
 function getCurrentUser(token) {
   return request(`${baseUrl}/users/me`, {
     method: "GET",
@@ -41,4 +57,4 @@ function getCurrentUser(token) {
   });
 }
 
-export { signUp, signIn, getCurrentUser };
+export { signUp, signIn, getCurrentUser, editProfile };

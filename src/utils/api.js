@@ -39,4 +39,23 @@ function deleteCard(cardId, token) {
   });
 }
 
-export { getItems, createCard, deleteCard, request, checkResponse, baseUrl };
+function addCardLike(token) {
+  return request(`${baseUrl}/:itemId/likes/`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ liked: true }),
+  });
+}
+
+export {
+  getItems,
+  createCard,
+  deleteCard,
+  addCardLike,
+  request,
+  checkResponse,
+  baseUrl,
+};

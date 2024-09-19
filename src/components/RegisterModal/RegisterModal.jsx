@@ -27,7 +27,7 @@ function RegisterModal({ activeModal, closeActiveModal, onSignUp }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    debugger;
+
     onSignUp({ email, password, name, avatarUrl });
   };
 

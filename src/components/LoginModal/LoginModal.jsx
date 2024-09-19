@@ -30,7 +30,7 @@ const LoginModal = ({ activeModal, onLogIn, closeActiveModal }) => {
       name={"login"}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email" className="modal__input_type_name">
+      <label htmlFor="email" className="modal__input_type_email">
         Email{" "}
         <input
           type="text"

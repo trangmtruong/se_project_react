@@ -8,11 +8,12 @@ const Profile = ({
   onCardClick,
   clothingItems,
   selectedCard,
+  handleEditProfileModal,
 }) => {
   return (
     <div className="profile">
       <section className="profile__sidebar">
-        <SideBar />
+        <SideBar handleEditProfileModal={handleEditProfileModal} />
       </section>
       <section className="profile__clothing-its">
         <ClothesSection

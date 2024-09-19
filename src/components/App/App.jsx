@@ -12,11 +12,12 @@ import { coordinates, APIkey } from "../../utils/constants";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { getItems, createCard, deleteCard } from "../../utils/api";
-import { signUp, signIn, getCurrentUser } from "../../utils/auth";
+import { signUp, signIn, getCurrentUser, editProfile } from "../../utils/auth";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import EditProfileModal from "../EditProfileModal";
 
 function App() {
   //useState hooks
@@ -38,6 +39,12 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //functions
+
+  const handleToggleSwitchChange = () => {
+    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
+    if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+  };
+
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -58,13 +65,16 @@ function App() {
   const handleLoginModal = () => {
     setActiveModal("login");
   };
+  const handleEditProfileModal = () => {
+    setActiveModal("editprofile");
+  };
 
   const onAddItem = (values) => {
-    // console.log(values);
-    // // console.log(e.target);
-    createCard(values)
-      .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+    // grab token from localstorage and pass to createCard
+
+    createCard({ ...values, token: localStorage.getItem("jwt") })
+      .then(({ data }) => {
+        setClothingItems([data, ...clothingItems]);
         closeActiveModal();
       })
       .catch(console.error);
@@ -86,6 +96,7 @@ function App() {
     signUp(data)
       .then((res) => {
         onLogIn(res);
+        closeActiveModal();
       })
       .catch(console.error);
   };
@@ -102,10 +113,47 @@ function App() {
       .catch(console.error);
   };
 
-  const handleToggleSwitchChange = () => {
-    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
-    if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+  const onEditProfile = (data) => {
+    const token = localStorage.getItem("jwt");
+    editProfile(data, token)
+      .then((res) => {
+        setCurrentUser(res.data);
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
+
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = localStorage.getItem("jwt");
+    // Check if this card is not currently liked
+    //IF NOT LIKED
+    !isLiked
+      ? // if so, send a request to add the user's id to the card's likes array
+        //LIKE THE CARD
+        api
+          // the first argument is the card's id
+          .addCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err))
+      : // if not, send a request to remove the user's id from the card's likes array
+        //IF IS LIKED,
+        api
+          // the first argument is the card's id
+          //REMOVE LIKED
+          .removeCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err));
+  };
+
+  //useEffects
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
@@ -171,6 +219,7 @@ function App() {
                     weatherData={weatherData}
                     onCardClick={handleCardClick}
                     clothingItems={clothingItems}
+                    onCardLike={handleCardLike}
                   />
                 }
               />
@@ -184,6 +233,7 @@ function App() {
                       onCardClick={handleCardClick}
                       clothingItems={clothingItems}
                       selectedCard={selectedCard}
+                      handleEditProfileModal={handleEditProfileModal}
                     />
                   </ProtectedRoute>
                 }
@@ -224,6 +274,11 @@ function App() {
             activeModal={activeModal}
             closeActiveModal={closeActiveModal}
             onLogIn={onLogIn}
+          />
+          <EditProfileModal
+            activeModal={activeModal}
+            closeActiveModal={closeActiveModal}
+            onEditProfile={onEditProfile}
           />
         </CurrentTemperatureUnitContext.Provider>
       </div>
