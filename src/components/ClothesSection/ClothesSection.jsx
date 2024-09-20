@@ -10,6 +10,7 @@ const ClothesSection = ({
   onCardClick,
   clothingItems,
   selectedCard = { selectedCard },
+  onCardLike = { onCardLike },
 }) => {
   const currentUser = useContext(CurrentUserContext);
   const isOwn = selectedCard.owner === currentUser._id;
@@ -36,7 +37,12 @@ const ClothesSection = ({
           })
           .map((item) => {
             return (
-              <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+              <ItemCard
+                key={item._id}
+                item={item}
+                onCardClick={onCardClick}
+                onCardLike={onCardLike}
+              />
             );
           })}
       </ul>

@@ -11,7 +11,13 @@ import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { coordinates, APIkey } from "../../utils/constants";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { getItems, createCard, deleteCard } from "../../utils/api";
+import {
+  getItems,
+  createCard,
+  deleteCard,
+  likeCard,
+  unlikeCard,
+} from "../../utils/api";
 import { signUp, signIn, getCurrentUser, editProfile } from "../../utils/auth";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
@@ -37,6 +43,7 @@ function App() {
   });
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
 
   //functions
 
@@ -123,16 +130,16 @@ function App() {
       .catch(console.error);
   };
 
-  const handleCardLike = ({ id, isLiked }) => {
+  const handleCardLike = (data) => {
     const token = localStorage.getItem("jwt");
     // Check if this card is not currently liked
     //IF NOT LIKED
     !isLiked
       ? // if so, send a request to add the user's id to the card's likes array
         //LIKE THE CARD
-        api
+        likeCard(data, token)
           // the first argument is the card's id
-          .addCardLike(id, token)
+          .addCardLike(data, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === id ? updatedCard : item))
@@ -141,10 +148,10 @@ function App() {
           .catch((err) => console.log(err))
       : // if not, send a request to remove the user's id from the card's likes array
         //IF IS LIKED,
-        api
+        unlikeCard(data)
           // the first argument is the card's id
           //REMOVE LIKED
-          .removeCardLike(id, token)
+          .removeCardLike({ cardId, token })
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === id ? updatedCard : item))
@@ -234,6 +241,7 @@ function App() {
                       clothingItems={clothingItems}
                       selectedCard={selectedCard}
                       handleEditProfileModal={handleEditProfileModal}
+                      onCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
                 }

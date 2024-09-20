@@ -9,6 +9,7 @@ const Profile = ({
   clothingItems,
   selectedCard,
   handleEditProfileModal,
+  onCardLike = { onCardLike },
 }) => {
   return (
     <div className="profile">
@@ -21,6 +22,7 @@ const Profile = ({
           onCardClick={onCardClick}
           clothingItems={clothingItems}
           selectedCard={selectedCard}
+          onCardLike={onCardLike}
         />
       </section>
     </div>
