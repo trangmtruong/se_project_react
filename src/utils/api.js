@@ -39,19 +39,19 @@ function deleteCard(cardId, token) {
   });
 }
 
-function likeCard({ cardId, token }) {
-  return request(`${baseUrl}/:itemId/likes/${cardId}`, {
+function likeCard(itemId, token) {
+  return request(`${baseUrl}/items/${itemId}/likes/`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ cardId, token }),
+    body: JSON.stringify({ token }),
   });
 }
 
 function unlikeCard({ cardId, token }) {
-  return request(`${baseUrl}/items/${cardId}`, {
+  return request(`${baseUrl}/items/`, {
     method: "DELETE",
     authorization: `Bearer ${token}`,
   });
