@@ -1,6 +1,6 @@
 import "./ItemCard.css";
 import likeButton from "../../assets/likebtn.svg";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 function ItemCard({ item, onCardClick, onCardLike }) {
   const currentUser = useContext(CurrentUserContext);
@@ -13,16 +13,21 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   //checks if item was liked by current user
   //likes array should be an array of ids
   // const isLiked = item.likes.some((id) => id === currentUser._id);
+
   // const [isLiked, setIsLiked] = useState(false);
 
   //useEffect
   //set isLiked to be true or false
-  // useEffect(() => {});
+  // useEffect(() => {
+
+  // setIsLiked(true);
+
+  // },[isLiked]);
 
   //if ia auhorized user, show like button,
   //if not authorized, hide like button
-  // const itemLikeButtonClassName = `item__like-button ${
-  //   isLiked ? "item__like-button_visible" : "item__like-button_hidden"
+  // const itemLikeButtonClassName = ` card__like-btn ${
+  //   isLiked ? "card__like-btn_visible" : " card__like-btn_hidden"
   // }`;
   return (
     <li className="card">

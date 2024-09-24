@@ -50,10 +50,12 @@ function likeCard(itemId, token) {
   });
 }
 
-function unlikeCard({ cardId, token }) {
-  return request(`${baseUrl}/items/`, {
+function unlikeCard({ itemId, token }) {
+  return request(`${baseUrl}/items/${itemId}/likes/`, {
     method: "DELETE",
-    authorization: `Bearer ${token}`,
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
   });
 }
 

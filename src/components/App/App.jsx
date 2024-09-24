@@ -150,7 +150,7 @@ function App() {
           .catch((err) => console.log(err))
       : // if not, send a request to remove the user's id from the card's likes array
         //IF IS LIKED,
-        unlikeCard(data, token)
+        unlikeCard(data._id, token)
           // the first argument is the card's id
           //REMOVE LIKED
 
