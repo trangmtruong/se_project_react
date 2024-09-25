@@ -61,6 +61,12 @@ function App() {
     setActiveModal("add-garment");
   };
 
+  const handleLogOutClick = () => {
+    localStorage.removeItem("jwt");
+    setIsLoggedIn(false);
+    closeActiveModal();
+  };
+
   //declare handleAddClick function and call setActiveModal inside the function
   const closeActiveModal = () => {
     setActiveModal("");
@@ -112,6 +118,7 @@ function App() {
     signIn(data)
       .then((res) => {
         setIsLoggedIn(true);
+        setCurrentUser(res.user);
         //log user in
         //adds token
         localStorage.setItem("jwt", res.token);
@@ -130,7 +137,7 @@ function App() {
       .catch(console.error);
   };
 
-  const handleCardLike = (data) => {
+  const handleCardLike = (data, isLiked) => {
     const token = localStorage.getItem("jwt");
 
     // Check if this card is not currently liked
@@ -156,7 +163,7 @@ function App() {
 
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((item) => (item._id === id ? updatedCard : item))
+              cards.map((item) => (item._id === data._id ? updatedCard : item))
             );
           })
           .catch((err) => console.log(err));
@@ -229,6 +236,7 @@ function App() {
                     onCardClick={handleCardClick}
                     clothingItems={clothingItems}
                     onCardLike={handleCardLike}
+                    isLoggedIn={isLoggedIn}
                   />
                 }
               />
@@ -244,6 +252,8 @@ function App() {
                       selectedCard={selectedCard}
                       handleEditProfileModal={handleEditProfileModal}
                       onCardLike={handleCardLike}
+                      handleLogOutClick={handleLogOutClick}
+                      isLoggedIn={isLoggedIn}
                     />
                   </ProtectedRoute>
                 }
@@ -274,6 +284,7 @@ function App() {
             onClose={closeActiveModal}
             onDeleteItem={onDeleteItem}
           />
+
           <RegisterModal
             activeModal={activeModal}
             closeActiveModal={closeActiveModal}

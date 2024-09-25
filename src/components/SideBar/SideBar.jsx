@@ -3,7 +3,7 @@ import avatar from "../../assets/avatar.svg";
 import "./SideBar.css";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-const SideBar = ({ handleEditProfileModal }) => {
+const SideBar = ({ handleEditProfileModal, handleLogOutClick }) => {
   const { name, avatar } = useContext(CurrentUserContext);
 
   return (
@@ -17,7 +17,9 @@ const SideBar = ({ handleEditProfileModal }) => {
       >
         Change profile data
       </button>
-      <button className="sidebar__logout">Log out</button>
+      <button onClick={handleLogOutClick} className="sidebar__logout">
+        Log out
+      </button>
     </div>
   );
 };

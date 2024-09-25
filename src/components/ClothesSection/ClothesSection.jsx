@@ -11,12 +11,13 @@ const ClothesSection = ({
   clothingItems,
   selectedCard = { selectedCard },
   onCardLike = { onCardLike },
+  isLoggedIn,
 }) => {
   const currentUser = useContext(CurrentUserContext);
-  const isOwn = selectedCard.owner === currentUser._id;
-  const clothesSectionItemsClassname = `clothes-section__items ${
-    isOwn ? "clothes-section__items_visible" : "clothes-section__items_hidden"
-  }`;
+  // const isOwn = selectedCard.owner === currentUser._id;
+  // const clothesSectionItemsClassname = `clothes-section__items ${
+  //   isOwn ? "clothes-section__items_visible" : "clothes-section__items_hidden"
+  // }`;
 
   return (
     <div className="clothes-section">
@@ -30,7 +31,7 @@ const ClothesSection = ({
           + Add new
         </button>
       </div>
-      <ul className={clothesSectionItemsClassname}>
+      <ul className={"clothes-section__items"}>
         {clothingItems
           .filter((item) => {
             return item.owner === currentUser._id;
@@ -42,6 +43,7 @@ const ClothesSection = ({
                 item={item}
                 onCardClick={onCardClick}
                 onCardLike={onCardLike}
+                isLoggedIn={isLoggedIn}
               />
             );
           })}

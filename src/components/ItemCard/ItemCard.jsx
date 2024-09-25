@@ -1,28 +1,31 @@
 import "./ItemCard.css";
 import likeButton from "../../assets/likebtn.svg";
+import isLikedButton from "../../assets/islikedbtn.svg";
 import { useContext, useEffect, useState } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-function ItemCard({ item, onCardClick, onCardLike }) {
+function ItemCard({ item, onCardClick, onCardLike, isLoggedIn = false }) {
   const currentUser = useContext(CurrentUserContext);
+  const [isLiked, setIsLiked] = useState(false);
+
+  // useEffect
+  // set isLiked to be true or false
+  useEffect(() => {
+    //checks if item was liked by current user
+    //likes array should be an array of ids
+    const isLiked = item.likes.some((id) => id === currentUser._id);
+
+    {
+      isLiked ? setIsLiked(true) : setIsLiked(false);
+    }
+  }, [item.likes, currentUser._id]);
+
   const handleCardClick = () => {
     onCardClick(item);
   };
   const handleLike = () => {
-    onCardLike(item);
+    setIsLiked(!isLiked);
+    onCardLike(item, isLiked);
   };
-  //checks if item was liked by current user
-  //likes array should be an array of ids
-  // const isLiked = item.likes.some((id) => id === currentUser._id);
-
-  // const [isLiked, setIsLiked] = useState(false);
-
-  //useEffect
-  //set isLiked to be true or false
-  // useEffect(() => {
-
-  // setIsLiked(true);
-
-  // },[isLiked]);
 
   //if ia auhorized user, show like button,
   //if not authorized, hide like button
@@ -32,13 +35,15 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   return (
     <li className="card">
       <h2 className="card__name">{item.name}</h2>
-      <img
-        className="card__like-btn"
-        type="button"
-        onClick={handleLike}
-        src={likeButton}
-        alt="Like button"
-      />
+      {isLoggedIn && (
+        <img
+          className={"card__like-btn"}
+          type="button"
+          onClick={handleLike}
+          src={isLiked ? likeButton : isLikedButton}
+          alt="Like button"
+        />
+      )}
       <img
         onClick={handleCardClick}
         className="card__image"

@@ -50,10 +50,11 @@ function likeCard(itemId, token) {
   });
 }
 
-function unlikeCard({ itemId, token }) {
+function unlikeCard(itemId, token) {
   return request(`${baseUrl}/items/${itemId}/likes/`, {
     method: "DELETE",
     headers: {
+      "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
   });

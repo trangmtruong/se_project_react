@@ -32,22 +32,32 @@ function Header({
       <div className="header__wrapper-right">
         <ToggleSwitch />
 
-        <button
+        {/* <button
           onClick={handleAddClick}
           type="button"
           className="header__add-clothes-button"
         >
           + Add clothes
-        </button>
+        </button> */}
 
         {isLoggedIn ? (
-          <Link to="/profile">
-            <div className="header__user-container">
-              <p className="header__username">{name}</p>
+          <>
+            <button
+              onClick={handleAddClick}
+              type="button"
+              className="header__add-clothes-button"
+            >
+              + Add clothes
+            </button>
 
-              <img src={avatar} alt={name} className="header__avatar" />
-            </div>
-          </Link>
+            <Link to="/profile">
+              <div className="header__user-container">
+                <p className="header__username">{name}</p>
+
+                <img src={avatar} alt={name} className="header__avatar" />
+              </div>
+            </Link>
+          </>
         ) : (
           <>
             <button
