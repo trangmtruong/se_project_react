@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import ModalWithForm from "./ModalWithForm/ModalWithForm";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "./EditProfileModal.css";
 
 const EditProfileModal = ({ activeModal, closeActiveModal, onEditProfile }) => {
   const [name, setName] = useState("");

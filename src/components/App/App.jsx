@@ -23,7 +23,8 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import EditProfileModal from "../EditProfileModal";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
+import Avatar from "../Avatar/Avatar";
 
 function App() {
   //useState hooks

@@ -44,6 +44,7 @@ function ItemCard({ item, onCardClick, onCardLike, isLoggedIn = false }) {
           alt="Like button"
         />
       )}
+
       <img
         onClick={handleCardClick}
         className="card__image"

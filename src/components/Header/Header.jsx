@@ -5,6 +5,7 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import Avatar from "../Avatar/Avatar";
 
 function Header({
   handleAddClick,
@@ -54,7 +55,7 @@ function Header({
               <div className="header__user-container">
                 <p className="header__username">{name}</p>
 
-                <img src={avatar} alt={name} className="header__avatar" />
+                <Avatar sizeClass="avatar-small" />
               </div>
             </Link>
           </>

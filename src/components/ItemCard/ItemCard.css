@@ -11,6 +11,10 @@
 
   border-color: black;
 }
+.card__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .card__name {
   position: absolute;
   top: 15px;
