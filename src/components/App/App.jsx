@@ -95,7 +95,9 @@ function App() {
   };
 
   const onDeleteItem = (cardId) => {
-    deleteCard(cardId)
+    const token = localStorage.getItem("jwt");
+
+    deleteCard(cardId, token)
       .then(() => {
         const updatedClothingItems = clothingItems.filter((item) => {
           return item._id !== cardId;
@@ -109,7 +111,7 @@ function App() {
   const onSignUp = (data) => {
     signUp(data)
       .then((res) => {
-        onLogIn(res);
+        onLogIn(data);
         closeActiveModal();
       })
       .catch(console.error);

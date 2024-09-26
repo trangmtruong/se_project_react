@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "./RegisterModal.css";
 
 function RegisterModal({ activeModal, closeActiveModal, onSignUp }) {
   const [email, setEmail] = useState("");
@@ -55,7 +56,7 @@ function RegisterModal({ activeModal, closeActiveModal, onSignUp }) {
       <label htmlFor="password" className="modal__input_type_password">
         Password{" "}
         <input
-          type="text"
+          type="password"
           className="modal__input"
           id="password"
           placeholder="Password"
@@ -85,6 +86,9 @@ function RegisterModal({ activeModal, closeActiveModal, onSignUp }) {
           onChange={handleAvatarUrlChange}
         />
       </label>
+      <button type="submit" className="modal__login">
+        or Log In
+      </button>
     </ModalWithForm>
   );
 }

@@ -10,7 +10,7 @@ const SideBar = ({ handleEditProfileModal, handleLogOutClick }) => {
 
   return (
     <div className="sidebar">
-      <div className="avatar__user-info">
+      <div className="sidebar__user-info">
         <Avatar sizeClass="avatar-large" />
         <p className="sidebar__username">{name}</p>
       </div>

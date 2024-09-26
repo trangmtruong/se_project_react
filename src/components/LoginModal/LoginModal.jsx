@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "./LoginModal.css";
 
 const LoginModal = ({ activeModal, onLogIn, closeActiveModal }) => {
   const [email, setEmail] = useState("");
@@ -44,7 +45,7 @@ const LoginModal = ({ activeModal, onLogIn, closeActiveModal }) => {
       <label htmlFor="password" className="modal__input_type_password">
         Password{" "}
         <input
-          type="text"
+          type="password"
           className="modal__input"
           id="password"
           placeholder="Password"
@@ -52,6 +53,9 @@ const LoginModal = ({ activeModal, onLogIn, closeActiveModal }) => {
           onChange={handlePasswordChange}
         />
       </label>
+      <button type="submit" className="modal__signup">
+        or Sign Up
+      </button>
     </ModalWithForm>
   );
 };

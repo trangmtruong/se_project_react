@@ -4,6 +4,7 @@
 }
 .modal__content {
   width: 498px;
+
   border-radius: 16px;
   border: none;
 }
@@ -27,7 +28,9 @@
 }
 .modal__image {
   width: 100%;
-  border-radius: 16px;
+  height: 498px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 }
 .modal__footer {
   font-family: "Cabinet Grotesk";
@@ -55,6 +58,13 @@
   margin: 12px 0 0 0;
 }
 .modal__delete {
+  /* border: none;
+  background-color: transparent;
+  padding: 0;
+  color: #ff4d00;
+  padding-right: 32px; */
+}
+.modal__delete-button_visible {
   border: none;
   background-color: transparent;
   padding: 0;

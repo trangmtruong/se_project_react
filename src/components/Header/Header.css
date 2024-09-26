@@ -18,6 +18,7 @@
 .header__wrapper-right {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 .header__logo {
   margin-right: 24px;
@@ -46,6 +47,7 @@
   height: 24px;
   white-space: nowrap;
   cursor: pointer;
+  background: transparent;
 }
 
 .header__user-container {
@@ -59,8 +61,8 @@
   font-size: 20px;
   line-height: 24.8px;
   font-weight: 700;
-  width: 157px;
-  height: 25px;
+  /* width: 157px;
+  height: 25px; */
 }
 .header__avatar {
   width: 40px;
@@ -69,4 +71,22 @@
 a {
   text-decoration: none;
   color: #000;
+}
+.header_signup-button {
+  border: none;
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  line-height: 24.8px;
+  font-weight: 700;
+  background: transparent;
+  cursor: pointer;
+}
+.header_login-button {
+  border: none;
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  line-height: 24.8px;
+  font-weight: 700;
+  background: transparent;
+  cursor: pointer;
 }

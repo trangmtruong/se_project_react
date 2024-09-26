@@ -33,9 +33,13 @@ function createCard({ name, imageUrl, weather, token }) {
 }
 
 function deleteCard(cardId, token) {
+  debugger;
   return request(`${baseUrl}/items/${cardId}`, {
     method: "DELETE",
-    authorization: `Bearer ${token}`,
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
   });
 }
 

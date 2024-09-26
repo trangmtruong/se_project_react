@@ -34,16 +34,18 @@ function ItemCard({ item, onCardClick, onCardLike, isLoggedIn = false }) {
   // }`;
   return (
     <li className="card">
-      <h2 className="card__name">{item.name}</h2>
-      {isLoggedIn && (
-        <img
-          className={"card__like-btn"}
-          type="button"
-          onClick={handleLike}
-          src={isLiked ? likeButton : isLikedButton}
-          alt="Like button"
-        />
-      )}
+      <div className="card__overlay">
+        <h2 className="card__name">{item.name}</h2>
+        {isLoggedIn && (
+          <img
+            className={"card__like-btn"}
+            type="button"
+            onClick={handleLike}
+            src={isLiked ? isLikedButton : likeButton}
+            alt="Like button"
+          />
+        )}
+      </div>
 
       <img
         onClick={handleCardClick}

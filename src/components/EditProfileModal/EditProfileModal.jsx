@@ -20,7 +20,7 @@ const EditProfileModal = ({ activeModal, closeActiveModal, onEditProfile }) => {
   return (
     <ModalWithForm
       titleText="Change profile data"
-      buttonText="Change profile data"
+      buttonText="Save changes"
       activeModal={activeModal}
       onClose={closeActiveModal}
       isOpen={activeModal === "editprofile"}

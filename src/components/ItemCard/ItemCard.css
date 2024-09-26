@@ -11,26 +11,39 @@
 
   border-color: black;
 }
-.card__wrapper {
+.card__overlay {
   display: flex;
-  justify-content: space-between;
-}
-.card__name {
   position: absolute;
+  justify-content: space-between;
   top: 15px;
   margin: 0;
-  background-color: #fff;
-  font-family: "Cabinet Grotesk";
-  font-size: 16px;
+  padding: 2px 12px 2px 12px;
   line-height: 20px;
   font-weight: 700;
   color: #00000099;
-  padding: 2px 12px 2px 12px;
-
+  align-items: center;
   white-space: nowrap;
+  gap: 10px;
+}
+.card__name {
+  /* position: absolute; */
+  /* top: 15px; */
+  /* margin: 0; */
+  background-color: #fff;
+  font-family: "Cabinet Grotesk";
+  font-size: 16px;
+  /* line-height: 20px;
+  font-weight: 700;
+  color: #00000099; */
+  /* padding: 2px 12px 2px 12px; */
 
-  padding: 2px, 12px, 2px, 12px;
+  /* white-space: nowrap; */
+
+  /* padding: 2px, 12px, 2px, 12px; */
   border-radius: 4px;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .card__image {
   width: 100%;
@@ -40,7 +53,11 @@
 }
 
 .card__like-btn {
-  position: absolute;
+  width: 18px;
+  height: 15px;
+  border: 2px;
+  color: #00000099;
+  /* position: absolute;
   top: 15px;
   margin: 0;
   background-color: #fff;
@@ -51,8 +68,8 @@
   color: #00000099;
   padding: 2px 12px 2px 12px;
 
-  white-space: nowrap;
+  white-space: nowrap; */
 
-  padding: 2px, 12px, 2px, 12px;
-  border-radius: 4px;
+  /* padding: 2px, 12px, 2px, 12px;
+  border-radius: 4px; */
 }
