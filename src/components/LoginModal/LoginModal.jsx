@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./LoginModal.css";
 
-const LoginModal = ({ activeModal, onLogIn, closeActiveModal }) => {
+const LoginModal = ({
+  activeModal,
+  onLogIn,
+  closeActiveModal,
+  handleRegisterModal,
+}) => {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
-    console.log(e.target.value);
     setEmail(e.target.value);
   };
 
   const [password, setPassword] = useState("");
   const handlePasswordChange = (e) => {
-    console.log(e.target.value);
     setPassword(e.target.value);
   };
 
@@ -31,31 +34,43 @@ const LoginModal = ({ activeModal, onLogIn, closeActiveModal }) => {
       name={"login"}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email" className="modal__input_type_email">
+      <label htmlFor="loginmodal-email" className="modal__input_type_email">
         Email{" "}
         <input
           type="text"
           className="modal__input"
-          id="email"
+          id="loginmodal-email"
           placeholder="Email"
           value={email}
           onChange={handleEmailChange}
         />
       </label>
-      <label htmlFor="password" className="modal__input_type_password">
+      <label
+        htmlFor="loginmodal-password"
+        className="modal__input_type_password"
+      >
         Password{" "}
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="loginmodal-password"
           placeholder="Password"
           value={password}
           onChange={handlePasswordChange}
         />
       </label>
-      <button type="submit" className="modal__signup">
-        or Sign Up
-      </button>
+      <div className="modal__buttons-wrapper">
+        <button type="submit" className="modal__submit">
+          Log In
+        </button>
+        <button
+          type="button"
+          className="modal__or-signup-btn"
+          onClick={handleRegisterModal}
+        >
+          or Sign Up
+        </button>
+      </div>
     </ModalWithForm>
   );
 };

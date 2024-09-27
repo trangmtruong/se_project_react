@@ -33,7 +33,6 @@ function createCard({ name, imageUrl, weather, token }) {
 }
 
 function deleteCard(cardId, token) {
-  debugger;
   return request(`${baseUrl}/items/${cardId}`, {
     method: "DELETE",
     headers: {

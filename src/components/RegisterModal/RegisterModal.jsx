@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function RegisterModal({ activeModal, closeActiveModal, onSignUp }) {
+function RegisterModal({
+  activeModal,
+  closeActiveModal,
+  onSignUp,
+  handleLoginModal = { handleLoginModal },
+}) {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
     console.log(e.target.value);
@@ -42,53 +47,69 @@ function RegisterModal({ activeModal, closeActiveModal, onSignUp }) {
       name={"signup"}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email" className="modal__input_type_name">
-        Email{" "}
+      <label htmlFor="registermodal-email" className="modal__input_type_name">
+        Email*{" "}
         <input
           type="text"
           className="modal__input"
-          id="email"
+          id="registermodal-email"
           placeholder="Email"
           value={email}
           onChange={handleEmailChange}
         />
       </label>
-      <label htmlFor="password" className="modal__input_type_password">
-        Password{" "}
+      <label
+        htmlFor="registermodal-password"
+        className="modal__input_type_password"
+      >
+        Password*{" "}
         <input
           type="password"
           className="modal__input"
-          id="password"
+          id="registermodal-password"
           placeholder="Password"
           value={password}
           onChange={handlePasswordChange}
         />
       </label>
-      <label htmlFor="name" className="modal__input_type_name">
-        Name{" "}
+      <label htmlFor="registermodal-name" className="modal__input_type_name">
+        Name*{" "}
         <input
           type="text"
           className="modal__input"
-          id="name"
+          id="registermodal-name"
           placeholder="Name"
           value={name}
           onChange={handleNameChange}
         />
       </label>
-      <label htmlFor="avatarUrl" className="modal__input_type_avatarurl">
+      <label
+        htmlFor="registermodal-avatarUrl"
+        className="modal__input_type_avatarurl"
+      >
         Avatar URL{" "}
         <input
           type="url"
           className="modal__input"
-          id="avatarurl"
+          id="registermodal-avatarurl"
           placeholder="Avatar URL"
           value={avatarUrl}
           onChange={handleAvatarUrlChange}
         />
       </label>
-      <button type="submit" className="modal__login">
-        or Log In
-      </button>
+      <div className="modal__buttons-wrapper">
+        <button type="submit" className="modal__submit">
+          Sign Up
+        </button>
+
+        <button
+          type="button"
+          className="modal__or-login-btn"
+          onClick={handleLoginModal}
+        >
+          or Log In
+        </button>
+      </div>
     </ModalWithForm>
   );
 }

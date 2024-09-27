@@ -10,7 +10,6 @@ const AddItemModal = ({
 }) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
-    console.log(e.target.value);
     setName(e.target.value);
   };
 
@@ -40,23 +39,26 @@ const AddItemModal = ({
       name={"addgarment"}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__input_type_name">
+      <label htmlFor="additemmodal-name" className="modal__input_type_name">
         Name{" "}
         <input
           type="text"
           className="modal__input"
-          id="name"
+          id="additemmodal-name"
           placeholder="Name"
           value={name}
           onChange={handleNameChange}
         />
       </label>
-      <label htmlFor="imageUrl" className="modal__input_type_image">
+      <label
+        htmlFor="additemmodal-imageUrl"
+        className="modal__input_type_image"
+      >
         Image{" "}
         <input
           type="url"
           className="modal__input"
-          id="imageUrl"
+          id="additemmodal-imageUrl"
           placeholder="Image URL"
           value={imageUrl}
           onChange={handleImageUrlChange}
@@ -98,9 +100,9 @@ const AddItemModal = ({
           Cold
         </label>
       </fieldset>
-      {/* <button type="submit" className="modal__submit" onSubmit={handleSubmit}>
+      <button type="submit" className="modal__submit" onSubmit={handleSubmit}>
         Add garment
-      </button> */}
+      </button>
     </ModalWithForm>
   );
 };

@@ -24,6 +24,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
+// import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import Avatar from "../Avatar/Avatar";
 
 function App() {
@@ -82,6 +83,9 @@ function App() {
   const handleEditProfileModal = () => {
     setActiveModal("editprofile");
   };
+  // handleDeleteConfirmationModal = () => {
+  //   setActiveModal("delete-confirmation");
+  // };
 
   const onAddItem = (values) => {
     // grab token from localstorage and pass to createCard
@@ -280,30 +284,36 @@ function App() {
             activeModal={activeModal}
             onAddItem={onAddItem}
           />
-
           <ItemModal
             activeModal={activeModal}
             card={selectedCard}
             onClose={closeActiveModal}
             onDeleteItem={onDeleteItem}
+            // handleDeleteConfirmationModal={handleDeleteConfirmationModal}
           />
-
           <RegisterModal
             activeModal={activeModal}
             closeActiveModal={closeActiveModal}
             onSignUp={onSignUp}
+            handleLoginModal={handleLoginModal}
           />
-
           <LoginModal
             activeModal={activeModal}
             closeActiveModal={closeActiveModal}
             onLogIn={onLogIn}
+            handleRegisterModal={handleRegisterModal}
           />
           <EditProfileModal
             activeModal={activeModal}
             closeActiveModal={closeActiveModal}
             onEditProfile={onEditProfile}
           />
+          {/* <DeleteConfirmationModal>
+            activeModal={activeModal}
+            closeActiveModal={closeActiveModal}
+            onDeleteItem={onDeleteItem}
+            {/* handleDeleteConfirmationModal={handleDeleteConfirmationModal} */}
+          {/* </DeleteConfirmationModal> */}
         </CurrentTemperatureUnitContext.Provider>
       </div>
     </CurrentUserContext.Provider>

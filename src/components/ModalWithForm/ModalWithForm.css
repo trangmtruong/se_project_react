@@ -65,8 +65,17 @@
 .modal__input_type_name {
   margin-top: 24px;
 }
+.modal__input_type_email {
+  padding-top: 24px;
+}
 .modal__input_type_image {
   margin-top: 24px;
+}
+.modal__input_type_password {
+  padding-top: 24px;
+}
+.modal__input_type_avatarurl {
+  padding-top: 24px;
 }
 .modal__input {
   display: block;
@@ -90,13 +99,18 @@
 .modal__legend {
   margin-bottom: 17px;
 }
+.modal__buttons-wrapper {
+  /* display: flex;
+  align-items: center; */
+}
 .modal__submit {
   border: none;
   background: #0000004d;
   border-radius: 4px;
   cursor: pointer;
-  width: 124px;
+  /* width: 124px; */
   height: 36px;
+  padding: 8px 16px;
 
   border: none;
   background-repeat: no-repeat;
@@ -108,4 +122,19 @@
   line-height: 20px;
   font-weight: 700;
   margin-top: 40px;
+}
+.modal__delete-button {
+  cursor: pointer;
+}
+.modal__or-signup-btn {
+  border: none;
+  background: transparent;
+  color: #00000080;
+  cursor: pointer;
+}
+.modal__or-login-btn {
+  border: none;
+  background: transparent;
+  color: #00000080;
+  cursor: pointer;
 }
