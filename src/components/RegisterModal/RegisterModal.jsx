@@ -84,7 +84,7 @@ function RegisterModal({
         />
       </label>
       <label
-        htmlFor="registermodal-avatarUrl"
+        htmlFor="registermodal-avatarurl"
         className="modal__input_type_avatarurl"
       >
         Avatar URL{" "}

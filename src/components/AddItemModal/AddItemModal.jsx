@@ -100,7 +100,7 @@ const AddItemModal = ({
           Cold
         </label>
       </fieldset>
-      <button type="submit" className="modal__submit" onSubmit={handleSubmit}>
+      <button type="submit" className="modal__submit">
         Add garment
       </button>
     </ModalWithForm>
