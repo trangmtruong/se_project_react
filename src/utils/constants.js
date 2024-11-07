@@ -110,9 +110,16 @@ export const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
-export const coordinates = {
+const coordinates = {
   latitude: 32.715736,
   longitude: -117.161087,
 };
 
-export const APIkey = "da219ad77483d20473452415deeebfed";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.w2w.jumpingcrab.com"
+    : "http://localhost:3001";
+
+const APIkey = "da219ad77483d20473452415deeebfed";
+
+export { coordinates, APIkey, baseUrl };
