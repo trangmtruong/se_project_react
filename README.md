@@ -46,5 +46,5 @@ This project was made using:
 
 **GitHub**
 
-- [Link to the project on GitHub](https://github.com/trangmtruong/se_project_react)
+- [Link to Frontend on GitHub](https://github.com/trangmtruong/se_project_react)
 - [Link to Backend Repo](https://github.com/trangmtruong/se_project_express.git)
