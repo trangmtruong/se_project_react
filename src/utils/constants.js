@@ -117,7 +117,7 @@ const coordinates = {
 
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.w2w.jumpingcrab.com"
+    ? "https://api.w2w.crabdance.com"
     : "http://localhost:3001";
 
 const APIkey = "da219ad77483d20473452415deeebfed";
