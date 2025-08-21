@@ -8,18 +8,18 @@ This React project, combining with the backend expresss project, creates a full-
 
 The live version of the application is available at:
 
-**Production URL**: `https://w2w.jumpingcrab.com`
+**Production URL**: `https://w2w.crabdance.com`
 
 ### API Configuration
 
 The front end communicates with the back end via this base API URL:
 
-**API URL**: `https://api.w2w.jumpingcrab.com`
+**API URL**: `https://api.w2w.crabdance.com`
 
 To set this in your environment variables, add the following line to your `.env` file in the front end:
 
 ```plaintext
-VITE_API_BASE_URL=https://api.w2w.jumpingcrab.com
+VITE_API_BASE_URL=https://api.w2w.crabdance.com
 ```
 
 ### React + Vite
