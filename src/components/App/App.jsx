@@ -4,7 +4,6 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
@@ -24,8 +23,6 @@ import LoginModal from "../LoginModal/LoginModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
-// import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
-import Avatar from "../Avatar/Avatar";
 
 function App() {
   //useState hooks
@@ -45,7 +42,6 @@ function App() {
   });
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
 
   //functions
 
@@ -114,7 +110,7 @@ function App() {
 
   const onSignUp = (data) => {
     signUp(data)
-      .then((res) => {
+      .then(() => {
         onLogIn(data);
         closeActiveModal();
       })
@@ -214,7 +210,7 @@ function App() {
         setCurrentUser(user);
       })
       .catch(() => {
-        console.error;
+        localStorage.removeItem("jwt");
         setIsLoggedIn(false);
       });
   }, []);

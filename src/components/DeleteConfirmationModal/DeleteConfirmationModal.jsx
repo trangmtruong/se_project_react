@@ -1,12 +1,11 @@
-import React from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-
 const DeleteConfirmationModal = ({
   activeModal,
   closeActiveModal,
   onDeleteItem,
-  handleDeleteConfirmationModal,
+  card,
 }) => {
+  const modalDeleteButtonClassName = "modal__delete-button";
+
   return (
     <div
       className={`modal ${
@@ -22,7 +21,7 @@ const DeleteConfirmationModal = ({
 
         <button
           className={modalDeleteButtonClassName}
-          onClick={(e) => onDeleteItem(card._id)}
+          onClick={() => onDeleteItem?.(card?._id)}
           type="button"
         >
           Yes, delete item

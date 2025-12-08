@@ -6,7 +6,6 @@ function ItemModal({
   onClose,
   card,
   onDeleteItem,
-  handleDeleteConfirmation,
 }) {
   const currentUser = useContext(CurrentUserContext);
   const isOwn = card.owner === currentUser._id;
@@ -53,7 +52,7 @@ function ItemModal({
                     {isOwn && (
                       <button
                         className={modalDeleteButtonClassName}
-                        onClick={(e) => onDeleteItem(card._id)}
+                        onClick={() => onDeleteItem(card._id)}
                         type="button"
                       >
                         Delete item

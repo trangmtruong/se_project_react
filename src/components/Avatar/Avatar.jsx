@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./Avatar.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 

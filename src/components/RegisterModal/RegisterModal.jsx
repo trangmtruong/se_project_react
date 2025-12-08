@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
@@ -6,7 +6,7 @@ function RegisterModal({
   activeModal,
   closeActiveModal,
   onSignUp,
-  handleLoginModal = { handleLoginModal },
+  handleLoginModal,
 }) {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
